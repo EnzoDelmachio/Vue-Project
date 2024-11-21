@@ -13,7 +13,7 @@
                             Framework: Vue.js
                         </p>
                     </div>
-                    <div v-if="indice === 1">
+                    <div v-else>
                         <p class="mt-4 text-gray-600 text-lg">
                             Nome: Gabriel <br>
                             Curso: Engenharia de Software E4-2022 <br>
@@ -23,7 +23,8 @@
                         </p>
                     </div>
                     <div class="mt-8">
-                        <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" @click="indice = indice === 0 ? 1 : 0">Ver mais
+                        <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                            @click="indice = indice === 0 ? 1 : 0">Ver mais
                             <span class="ml-2">&#8594;</span></a>
                     </div>
                     <div class="mt-8">
@@ -34,15 +35,17 @@
                     </div>
                 </div>
                 <div class="mt-12 md:mt-0">
-                    <div v-if="indice === 0">
-                        <img src="@/assets/IMG_41502.png" alt="About Us Image"
-                        class="object-cover rounded-lg shadow-md">
-                    </div>
-                    <div v-if="indice === 1">
-                        <img src="#" alt="About Us Image"
-                        class="object-cover rounded-lg shadow-md">
-                    </div>
-                    
+                    <transition name="fade" mode="out-in">
+                        <div v-if="indice === 0">
+                            <img src="@/assets/IMG_41502.png" alt="About Us Image"
+                                class="object-cover rounded-lg shadow-md">
+                        </div>
+                        <div v-else>
+                            <img src="@/assets/Wp-Image.jpg" alt="About Us Image"
+                                class="object-cover rounded-lg shadow-md">
+                        </div>
+                    </transition>
+
                 </div>
             </div>
         </div>
@@ -55,3 +58,15 @@ import { ref } from 'vue';
 const indice = ref(0);
 
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+</style>
