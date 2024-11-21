@@ -1,14 +1,15 @@
 <template>
     <h1 class="text-2xl text-center py-4">Tabela de Livros</h1>
-    <!-- Inputs para tabela -->
+
     <div class="container mx-auto py-2 flex flex-col sm:flex-row sm:px-4 gap-2">
         <input type="text" v-model="titulo" placeholder="Digite o título"
             class="flex-grow bg-gray-200 rounded border border-gray-300 focus:outline-none shadow">
         <input type="text" v-model="autor" placeholder="Digite o autor"
             class="flex-grow bg-gray-200 rounded border border-gray-300 focus:outline-none shadow">
         <button @click="adicionarLivro" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Adicionar Livro</button>
+        <RouterLink to="/sobre-nos" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Sobre Nós</RouterLink>
     </div>
-    <!-- Tabela de Livros -->
+
     <div class="container mx-auto">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
