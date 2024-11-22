@@ -15,8 +15,8 @@
                     </div>
                     <div v-else>
                         <p class="mt-4 text-gray-600 text-lg">
-                            Nome: Gabriel <br>
-                            Curso: Engenharia de Software E4-2022 <br>
+                            Nome: Gabriel Dante Dutra Gomes<br>
+                            Curso: Engenharia de Software E3-2024 <br>
                             Empresa: UniFil <br>
                             Cargo: Desenvolvedor <br>
                             Framework: Vue.js
@@ -36,7 +36,7 @@
                 </div>
                 <div class="mt-12 md:mt-0">
                     <transition name="fade" mode="out-in">
-                        <div v-if="indice === 0">
+                        <div class="componente" v-if="indice === 0">
                             <img src="@/assets/IMG_41502.png" alt="About Us Image"
                                 class="object-cover rounded-lg shadow-md">
                         </div>
@@ -60,6 +60,7 @@ const indice = ref(0);
 </script>
 
 <style>
+
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.5s ease-out;
